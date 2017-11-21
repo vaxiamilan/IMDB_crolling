@@ -12,7 +12,7 @@ def searching(title):
 	if str(source.findAll(True, {"class":["findResult odd"]})) == "[]":
 		print("\n No items found please try again...\n\n")
 		title = take_input()
-		searching(title)
+		return(searching(title))
 	else:
 		table = source.find('table')
 		table_rows = table.find_all('tr')
@@ -26,7 +26,7 @@ def searching(title):
 				print(str(j) +"."+ cols[col_num].text)
 				j+=1
 				break
-	return(result)
+		return(result)
 
 
 
